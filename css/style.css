@@ -1,0 +1,267 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  /*background: black;*/
+  width: 740px;
+  height: 740px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.container div {
+  width: 150px;
+  height: 150px;
+  background-color: orange;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transition: 0.3s;
+  margin: -70px;
+}
+
+.container div:nth-child(1) {
+  transform: rotate(0deg) translate(270px) rotate(0deg);
+}
+
+.container div:nth-child(2) {
+  transform: rotate(45deg) translate(270px) rotate(-45deg);
+}
+
+.container div:nth-child(3) {
+  transform: rotate(90deg) translate(270px) rotate(-90deg);
+}
+
+.container div:nth-child(4) {
+  transform: rotate(135deg) translate(270px) rotate(-135deg);
+}
+
+.container div:nth-child(5) {
+  transform: rotate(180deg) translate(270px) rotate(-180deg);
+}
+
+.container div:nth-child(6) {
+  transform: rotate(225deg) translate(270px) rotate(-225deg);
+}
+
+.container div:nth-child(7) {
+  transform: rotate(270deg) translate(270px) rotate(-270deg);
+}
+
+.container div:nth-child(8) {
+  transform: rotate(315deg) translate(270px) rotate(-315deg);
+}
+
+.container div:hover {
+  transition: 0.3s;
+  cursor: pointer;
+  box-shadow: 0 0 40px white;
+}
+
+.element{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-1{
+  min-width: 500px;
+  min-height: 100px;
+  background: #070956;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 5;
+}
+
+.blur{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.68);
+  backdrop-filter: blur(5px);
+}
+
+
+.modal-1{
+  display: flex;
+}
+
+
+.cross1{
+  cursor: pointer;
+  position: absolute;
+  top: -25px;
+  z-index: 20;
+  right: 0;
+  width: 20px;
+  height: 20px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,900");
+p.warning {
+  text-align: center;
+  line-height: 2;
+}
+p.warning a {
+  background: #3bacff;
+  color: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+p.warning a.more {
+  background: #45ba04;
+}
+
+/*
+SCSS variables and mixins
+*/
+/*
+Some styles to make this demo look pretty (or at least decent)
+If you want to style everything yourself, you shouldn't need these
+*/
+
+
+
+
+.tabbed-content {
+  background: rgb(12 10 46);
+  box-shadow: 1px 1px 6px #ccc;
+  max-width: 600px;
+  padding: 1em;
+  margin: 1em auto;
+}
+
+.tabs ul {
+  margin: 0;
+  padding: 0 0 1em 0;
+  font-weight: bold;
+}
+.tabs ul li {
+  background: #eee;
+}
+.tabs ul li a {
+  padding: 0.5em 1em;
+}
+.tabs ul li a:hover, .tabs ul li a.active {
+  background: #444;
+  color: #eee;
+}
+
+.item {
+  margin-bottom: 2px;
+}
+.item::before {
+  cursor: pointer;
+  font-weight: bold;
+  background: #eee;
+  padding: 0.5em;
+  display: block;
+}
+.item.active::before {
+  background: #444;
+  color: #eee;
+}
+
+.item-content{
+  color: white;
+}
+
+.item.active .item-content {
+  padding: 1em;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -moz-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  -ms-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+@media all and (min-width: 800px) {
+  .item.active .item-content {
+    padding-top: 0;
+  }
+
+  .tabs-side .tabs li {
+    margin-bottom: 2px;
+  }
+}
+/*
+The project specific CSS starts here
+This is the minimum CSS that you will need in order for this to work
+*/
+.tabbed-content .tabs {
+  display: none;
+}
+.tabbed-content .item {
+  min-height: 2em;
+}
+.tabbed-content .item::before {
+  content: attr(data-title);
+}
+.tabbed-content .item .item-content {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+.tabbed-content .item.active .item-content {
+  opacity: 1;
+  visibility: visible;
+  height: auto;
+}
+
+@media all and (min-width: 800px) {
+  .tabbed-content .tabs {
+    display: block;
+  }
+  .tabbed-content .tabs li {
+    display: inline-block;
+  }
+  .tabbed-content .tabs li a {
+    display: block;
+  }
+  .tabbed-content .item {
+    min-height: 0;
+  }
+  .tabbed-content .item::before {
+    display: none;
+  }
+  .tabbed-content.tabs-side .tabs {
+    width: 150px;
+    float: left;
+  }
+  .tabbed-content.tabs-side .tabs li {
+    display: block;
+  }
+  .tabbed-content.tabs-side .item {
+    margin-left: 150px;
+  }
+}
+
+.modal-1, .blur{
+  /*display: none;*/
+  opacity: 0;
+  z-index: -10;
+}
+
+
+
+
+.tabs a {
+  color: #070956
+}
+
+body{
+  background-image: url("../img/backgroundBody.jpg.png") !important;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
